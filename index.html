@@ -29,7 +29,9 @@
 
   <body class="w-[90%] lg:w-[80%] mx-auto bg-[#F8FAFC] pb-20">
     <header>
-      <h1 class="text-5xl lg:text-6xl font-semibold text-[#002C5C] mt-16 mb-10">
+      <h1
+        class="text-5xl lg:text-6xl font-semibold text-[#002C5C] mt-16 mb-10 items-center text-center"
+      >
         Job Application Tracker
       </h1>
 
@@ -49,7 +51,9 @@
           <p class="font-medium text-gray-500 uppercase text-sm tracking-wide">
             Interviews
           </p>
-          <p id="interviewCount" class="font-bold text-4xl text-green-500">0</p>
+          <p id="interview-count" class="font-bold text-4xl text-green-500">
+            0
+          </p>
         </div>
 
         <div
@@ -75,14 +79,16 @@
 
       <div class="flex justify-center">
         <div class="flex gap-2 mb-8">
-          <button class="btn btn-sm btn-primary px-6 rounded-full">All</button>
+          <button class="tab-btn btn btn-sm btn-primary px-6 rounded-full">
+            All
+          </button>
           <button
-            class="btn btn-sm btn-outline border-slate-300 text-slate-600 px-6 rounded-full hover:bg-slate-100"
+            class="tab-btn btn btn-sm btn-outline border-slate-300 text-slate-600 px-6 rounded-full hover:bg-slate-100"
           >
             Interview
           </button>
           <button
-            class="btn btn-sm btn-outline border-slate-300 text-slate-600 px-6 rounded-full hover:bg-slate-100"
+            class="tab-btn btn btn-sm btn-outline border-slate-300 text-slate-600 px-6 rounded-full hover:bg-slate-100"
           >
             Rejected
           </button>
@@ -91,7 +97,8 @@
 
       <div id="job-list" class="space-y-4">
         <div
-          class="flex justify-between bg-white border border-slate-100 shadow-sm hover:shadow-md transition-shadow rounded-xl p-6"
+          class="job-card flex justify-between bg-white border border-slate-100 shadow-sm hover:shadow-md transition-shadow rounded-xl p-6"
+          data-status="none"
         >
           <div class="space-y-3">
             <h3 class="text-2xl font-bold text-[#002C5C]">Mobile First Corp</h3>
@@ -103,26 +110,29 @@
               >
             </div>
             <span
-              class="badge badge-soft badge-info py-3 px-4 rounded text-xs font-bold uppercase tracking-wider"
+              class="status-badge badge badge-soft badge-info py-3 px-4 rounded text-xs font-bold uppercase tracking-wider"
               >Not Applied</span
             >
             <p class="text-slate-600 max-w-2xl">
               Build responsive websites using React and Tailwind CSS. Must have
-              strong UI/UX sense and portfolio projects.
+              strong UI/UX sense.
             </p>
-
             <div class="flex gap-3 pt-2">
-              <button class="btn btn-sm btn-outline btn-success gap-2">
+              <button
+                class="interview-btn btn btn-sm btn-outline btn-success gap-2"
+              >
                 <i class="fa-solid fa-calendar-check"></i> Interview
               </button>
-              <button class="btn btn-sm btn-outline btn-error gap-2">
+              <button
+                class="rejected-btn btn btn-sm btn-outline btn-error gap-2"
+              >
                 <i class="fa-solid fa-circle-xmark"></i> Rejected
               </button>
             </div>
           </div>
           <div>
             <button
-              class="btn btn-ghost btn-circle text-slate-300 hover:text-red-500 transition-colors"
+              class="delete-btn btn btn-ghost btn-circle text-slate-300 hover:text-red-500 transition-colors"
             >
               <i class="fa-solid fa-trash-can text-lg"></i>
             </button>
@@ -130,7 +140,8 @@
         </div>
 
         <div
-          class="flex justify-between bg-white border border-slate-100 shadow-sm rounded-xl p-6"
+          class="job-card flex justify-between bg-white border border-slate-100 shadow-sm rounded-xl p-6"
+          data-status="none"
         >
           <div class="space-y-3">
             <h3 class="text-2xl font-bold text-[#002C5C]">WebFlow Agency</h3>
@@ -142,31 +153,31 @@
               >
             </div>
             <span
-              class="badge badge-soft badge-info py-3 px-4 rounded text-xs font-bold uppercase tracking-wider"
+              class="status-badge badge badge-soft badge-info py-3 px-4 rounded text-xs font-bold uppercase tracking-wider"
               >Not Applied</span
             >
             <p class="text-slate-600 max-w-2xl">
-              Create stunning web experiences for high-profile clients. Must
-              have portfolio and experience with modern web design trends.
+              Create stunning web experiences for high-profile clients.
             </p>
-
             <div class="flex gap-3 pt-2">
-              <button class="btn btn-sm btn-outline btn-success">
+              <button class="interview-btn btn btn-sm btn-outline btn-success">
                 Interview
               </button>
-              <button class="btn btn-sm btn-outline btn-error">Rejected</button>
+              <button class="rejected-btn btn btn-sm btn-outline btn-error">
+                Rejected
+              </button>
             </div>
           </div>
-          <div>
-            <button
-              class="btn btn-ghost btn-circle text-slate-300 hover:text-red-500"
-            >
-              <i class="fa-solid fa-trash-can text-lg"></i>
-            </button>
-          </div>
+          <button
+            class="delete-btn btn btn-ghost btn-circle text-slate-300 hover:text-red-500"
+          >
+            <i class="fa-solid fa-trash-can text-lg"></i>
+          </button>
         </div>
+
         <div
-          class="flex justify-between bg-white border border-slate-100 shadow-sm rounded-xl p-6"
+          class="job-card flex justify-between bg-white border border-slate-100 shadow-sm rounded-xl p-6"
+          data-status="none"
         >
           <div class="space-y-3">
             <h3 class="text-2xl font-bold text-[#002C5C]">DataViz Solutions</h3>
@@ -180,31 +191,32 @@
               >
             </div>
             <span
-              class="badge badge-soft badge-info py-3 px-4 rounded text-xs font-bold uppercase tracking-wider"
+              class="status-badge badge badge-soft badge-info py-3 px-4 rounded text-xs font-bold uppercase tracking-wider"
               >Not Applied</span
             >
             <p class="text-slate-600 max-w-2xl">
-              Transform complex data into compelling visualizations. Required
-              skills: D3.js, React, and strong analytical thinking.
+              Transform complex data into compelling visualizations. Required:
+              D3.js, React.
             </p>
-
             <div class="flex gap-3 pt-2">
-              <button class="btn btn-sm btn-outline btn-success">
+              <button class="interview-btn btn btn-sm btn-outline btn-success">
                 Interview
               </button>
-              <button class="btn btn-sm btn-outline btn-error">Rejected</button>
+              <button class="rejected-btn btn btn-sm btn-outline btn-error">
+                Rejected
+              </button>
             </div>
           </div>
-          <div>
-            <button
-              class="btn btn-ghost btn-circle text-slate-300 hover:text-red-500"
-            >
-              <i class="fa-solid fa-trash-can text-lg"></i>
-            </button>
-          </div>
+          <button
+            class="delete-btn btn btn-ghost btn-circle text-slate-300 hover:text-red-500"
+          >
+            <i class="fa-solid fa-trash-can text-lg"></i>
+          </button>
         </div>
+
         <div
-          class="flex justify-between bg-white border border-slate-100 shadow-sm rounded-xl p-6"
+          class="job-card flex justify-between bg-white border border-slate-100 shadow-sm rounded-xl p-6"
+          data-status="none"
         >
           <div class="space-y-3">
             <h3 class="text-2xl font-bold text-[#002C5C]">CloudFirst Inc</h3>
@@ -216,31 +228,31 @@
               >
             </div>
             <span
-              class="badge badge-soft badge-info py-3 px-4 rounded text-xs font-bold uppercase tracking-wider"
+              class="status-badge badge badge-soft badge-info py-3 px-4 rounded text-xs font-bold uppercase tracking-wider"
               >Not Applied</span
             >
             <p class="text-slate-600 max-w-2xl">
               Design and maintain scalable backend systems using Python and AWS.
-              Work with modern DevOps practices and cloud infrastructure.
             </p>
-
             <div class="flex gap-3 pt-2">
-              <button class="btn btn-sm btn-outline btn-success">
+              <button class="interview-btn btn btn-sm btn-outline btn-success">
                 Interview
               </button>
-              <button class="btn btn-sm btn-outline btn-error">Rejected</button>
+              <button class="rejected-btn btn btn-sm btn-outline btn-error">
+                Rejected
+              </button>
             </div>
           </div>
-          <div>
-            <button
-              class="btn btn-ghost btn-circle text-slate-300 hover:text-red-500"
-            >
-              <i class="fa-solid fa-trash-can text-lg"></i>
-            </button>
-          </div>
+          <button
+            class="delete-btn btn btn-ghost btn-circle text-slate-300 hover:text-red-500"
+          >
+            <i class="fa-solid fa-trash-can text-lg"></i>
+          </button>
         </div>
+
         <div
-          class="flex justify-between bg-white border border-slate-100 shadow-sm rounded-xl p-6"
+          class="job-card flex justify-between bg-white border border-slate-100 shadow-sm rounded-xl p-6"
+          data-status="none"
         >
           <div class="space-y-3">
             <h3 class="text-2xl font-bold text-[#002C5C]">Innovation Labs</h3>
@@ -252,32 +264,31 @@
               >
             </div>
             <span
-              class="badge badge-soft badge-info py-3 px-4 rounded text-xs font-bold uppercase tracking-wider"
+              class="status-badge badge badge-soft badge-info py-3 px-4 rounded text-xs font-bold uppercase tracking-wider"
               >Not Applied</span
             >
             <p class="text-slate-600 max-w-2xl">
-              Create beautiful and functional user interfaces for our suite of
-              products. Strong design skills and frontend development expertise
-              required.
+              Create beautiful and functional user interfaces for our products.
             </p>
-
             <div class="flex gap-3 pt-2">
-              <button class="btn btn-sm btn-outline btn-success">
+              <button class="interview-btn btn btn-sm btn-outline btn-success">
                 Interview
               </button>
-              <button class="btn btn-sm btn-outline btn-error">Rejected</button>
+              <button class="rejected-btn btn btn-sm btn-outline btn-error">
+                Rejected
+              </button>
             </div>
           </div>
-          <div>
-            <button
-              class="btn btn-ghost btn-circle text-slate-300 hover:text-red-500"
-            >
-              <i class="fa-solid fa-trash-can text-lg"></i>
-            </button>
-          </div>
+          <button
+            class="delete-btn btn btn-ghost btn-circle text-slate-300 hover:text-red-500"
+          >
+            <i class="fa-solid fa-trash-can text-lg"></i>
+          </button>
         </div>
+
         <div
-          class="flex justify-between bg-white border border-slate-100 shadow-sm rounded-xl p-6"
+          class="job-card flex justify-between bg-white border border-slate-100 shadow-sm rounded-xl p-6"
+          data-status="none"
         >
           <div class="space-y-3">
             <h3 class="text-2xl font-bold text-[#002C5C]">
@@ -287,36 +298,36 @@
             <div class="flex flex-wrap gap-4 text-sm text-slate-400">
               <span
                 ><i class="fa-solid fa-house-laptop mr-1"></i> New York, NY •
-                Full-time • $130,000 - $170,00</span
+                Full-time • $130,000 - $170,000</span
               >
             </div>
             <span
-              class="badge badge-soft badge-info py-3 px-4 rounded text-xs font-bold uppercase tracking-wider"
+              class="status-badge badge badge-soft badge-info py-3 px-4 rounded text-xs font-bold uppercase tracking-wider"
               >Not Applied</span
             >
             <p class="text-slate-600 max-w-2xl">
               Build enterprise applications with JavaScript and modern
-              frameworks. We offer competitive compensation, health insurance,
-              and professional development opportunities.
+              frameworks.
             </p>
-
             <div class="flex gap-3 pt-2">
-              <button class="btn btn-sm btn-outline btn-success">
+              <button class="interview-btn btn btn-sm btn-outline btn-success">
                 Interview
               </button>
-              <button class="btn btn-sm btn-outline btn-error">Rejected</button>
+              <button class="rejected-btn btn btn-sm btn-outline btn-error">
+                Rejected
+              </button>
             </div>
           </div>
-          <div>
-            <button
-              class="btn btn-ghost btn-circle text-slate-300 hover:text-red-500"
-            >
-              <i class="fa-solid fa-trash-can text-lg"></i>
-            </button>
-          </div>
+          <button
+            class="delete-btn btn btn-ghost btn-circle text-slate-300 hover:text-red-500"
+          >
+            <i class="fa-solid fa-trash-can text-lg"></i>
+          </button>
         </div>
+
         <div
-          class="flex justify-between bg-white border border-slate-100 shadow-sm rounded-xl p-6"
+          class="job-card flex justify-between bg-white border border-slate-100 shadow-sm rounded-xl p-6"
+          data-status="none"
         >
           <div class="space-y-3">
             <h3 class="text-2xl font-bold text-[#002C5C]">StartupXYZ</h3>
@@ -328,32 +339,32 @@
               >
             </div>
             <span
-              class="badge badge-soft badge-info py-3 px-4 rounded text-xs font-bold uppercase tracking-wider"
+              class="status-badge badge badge-soft badge-info py-3 px-4 rounded text-xs font-bold uppercase tracking-wider"
               >Not Applied</span
             >
             <p class="text-slate-600 max-w-2xl">
               Join our fast-growing startup and work on our core platform.
-              Experience with Node.js and React required. Great benefits and
-              equity package included.
+              Node/React.
             </p>
-
             <div class="flex gap-3 pt-2">
-              <button class="btn btn-sm btn-outline btn-success">
+              <button class="interview-btn btn btn-sm btn-outline btn-success">
                 Interview
               </button>
-              <button class="btn btn-sm btn-outline btn-error">Rejected</button>
+              <button class="rejected-btn btn btn-sm btn-outline btn-error">
+                Rejected
+              </button>
             </div>
           </div>
-          <div>
-            <button
-              class="btn btn-ghost btn-circle text-slate-300 hover:text-red-500"
-            >
-              <i class="fa-solid fa-trash-can text-lg"></i>
-            </button>
-          </div>
+          <button
+            class="delete-btn btn btn-ghost btn-circle text-slate-300 hover:text-red-500"
+          >
+            <i class="fa-solid fa-trash-can text-lg"></i>
+          </button>
         </div>
+
         <div
-          class="flex justify-between bg-white border border-slate-100 shadow-sm rounded-xl p-6"
+          class="job-card flex justify-between bg-white border border-slate-100 shadow-sm rounded-xl p-6"
+          data-status="none"
         >
           <div class="space-y-3">
             <h3 class="text-2xl font-bold text-[#002C5C]">
@@ -362,36 +373,35 @@
             <p class="text-slate-500 font-medium">Senior Frontend Developer</p>
             <div class="flex flex-wrap gap-4 text-sm text-slate-400">
               <span
-                ><i class="fa-solid fa-house-laptop mr-1"></i>San Francisco, CA
+                ><i class="fa-solid fa-house-laptop mr-1"></i> San Francisco, CA
                 • Full-time • $130,000 - $175,000</span
               >
             </div>
             <span
-              class="badge badge-soft badge-info py-3 px-4 rounded text-xs font-bold uppercase tracking-wider"
+              class="status-badge badge badge-soft badge-info py-3 px-4 rounded text-xs font-bold uppercase tracking-wider"
               >Not Applied</span
             >
             <p class="text-slate-600 max-w-2xl">
-              We are looking for an experienced Frontend Developer to build
-              scalable web applications using React and TypeScript. You will
-              work with a talented team on cutting-edge projects.
+              Experienced Frontend Developer to build scalable web apps with
+              React.
             </p>
-
             <div class="flex gap-3 pt-2">
-              <button class="btn btn-sm btn-outline btn-success">
+              <button class="interview-btn btn btn-sm btn-outline btn-success">
                 Interview
               </button>
-              <button class="btn btn-sm btn-outline btn-error">Rejected</button>
+              <button class="rejected-btn btn btn-sm btn-outline btn-error">
+                Rejected
+              </button>
             </div>
           </div>
-          <div>
-            <button
-              class="btn btn-ghost btn-circle text-slate-300 hover:text-red-500"
-            >
-              <i class="fa-solid fa-trash-can text-lg"></i>
-            </button>
-          </div>
+          <button
+            class="delete-btn btn btn-ghost btn-circle text-slate-300 hover:text-red-500"
+          >
+            <i class="fa-solid fa-trash-can text-lg"></i>
+          </button>
         </div>
       </div>
+
       <div
         id="no-jobs-container"
         class="flex flex-col items-center justify-center py-20 text-center hidden"
@@ -401,7 +411,6 @@
             <i class="fa-solid fa-file-invoice text-5xl text-blue-500"></i>
           </div>
         </div>
-
         <h2 class="text-3xl font-bold text-[#002C5C] mb-2">
           No jobs available
         </h2>
