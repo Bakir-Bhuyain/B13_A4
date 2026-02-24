@@ -77,24 +77,7 @@ jobList.addEventListener("click", function (event) {
   }
 
   //3: Clicking the Delete Button ---
-  else if (
-    clickedElement.classList.contains("delete-btn") ||
-    clickedElement.parentElement.classList.contains("delete-btn")
-  ) {
-    // If the deleted card had a status, decrease those counts too
-    if (currentStatus === "interview") {
-      interview = interview - 1;
-    } else if (currentStatus === "rejected") {
-      rejected = rejected - 1;
-    }
 
-    total = total - 1; // Decrease total count
-    card.remove(); 
-
-    // Update the "Jobs Found" text in the main section
-    jobQuantityEl.innerText = total;
-    updateDashboard();
-  }
 });
 
 // 5. Filtering the cards when clicking Tabs (All, Interview, Rejected)
